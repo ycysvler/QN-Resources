@@ -26,15 +26,12 @@ var FILE_PATH = "./data"
 func init() {
 	_, err := os.Stat(FILE_PATH)
 	if err == nil {
-		fmt.Println("load")
 		load()
 
 	} else {
 		root = TreeNode{Id: "root", Name: "root", Path: "root", Type: 0, CreateTime: time.Now(), Children: []TreeNode{}}
 		save()
 	}
-
-	fmt.Println("init")
 }
 
 func Instance() *TreeNode {
@@ -63,8 +60,6 @@ func (this *TreeNode) AddTreeNode(Name string, Path string, Type int) {
 	this.Children = append(this.Children, node)
 	save()
 }
-
-
 
 func save() {
 	var buf bytes.Buffer           // 构建一个buf
