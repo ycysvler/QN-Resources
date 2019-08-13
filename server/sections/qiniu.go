@@ -1,6 +1,6 @@
 package sections
 
-import "github.com/QN-Resources/config"
+import "github.com/QN-Resources/server/config"
 
 type qiniu struct {
 	AccessKey string `yaml:"AccessKey,omitempty"`

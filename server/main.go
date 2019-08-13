@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/QN-Resources/server/entity"
-	"github.com/QN-Resources/sections"
+	"github.com/QN-Resources/server/sections"
 	"github.com/qiniu/api.v7/auth/qbox"
 	"github.com/qiniu/api.v7/storage"
 )
@@ -29,7 +29,6 @@ func main(){
 
 	root.AddTreeNode("name", "path", 0)
 
-	return
 	fmt.Printf("root:%v\n",root)
 
 	// 设置 gin 的模式（调试模式：DebugMode, 发行模式：ReleaseMode）

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/qiniu-js@2.5.4/dist/qiniu.min.js"/>
+
+    <script  type="text/javascript">
+        function test(e) {
+            console.log('e', e);
+            // 使用qiniu sdk 上传视频
+            var observable = qiniu.upload(file, result.key, result.token, putExtra, {});
+
+            var subscription = observable.subscribe(
+                    function (res) {
+                        console.log(res);
+                        // if (processCallback)
+                        //     processCallback({name: file.name, process: res});
+                    },
+                    function (err) {
+                        console.log(err);
+                        // callback(err, null);
+                    },
+                    function (res) {
+                        // 上传成功
+                        console.log('上传成功');
+                        //callback(null, {name: file.name, path: result.path});
+                    });
+        }
+
+
+    </script>
+
+    <script type="text/javascript">
+        function upperCase(x)
+        {
+            var y=document.getElementById(x).value
+            document.getElementById(x).value=y.toUpperCase()
+        }
+
+        function test1(e){
+
+            console.log('e', e.files);
+
+            var file = e.files[0];
+
+            var token = "z2uEqEqNRC1APAm4j78V5JMaPLCYeHdi6JBdPSMt:fyYff_vRoUnluVcm3WoqSTWMseE=:eyJzY29wZSI6InRlc3QiLCJkZWFkbGluZSI6MTU2NTYwOTE4NX0=";
+
+            // 使用qiniu sdk 上传视频
+            var observable = qiniu.upload(file, "abcd.jpg", token, {}, {});
+
+            var subscription = observable.subscribe(
+                    function (res) {
+                        console.log(res);
+                        // if (processCallback)
+                        //     processCallback({name: file.name, process: res});
+                    },
+                    function (err) {
+                        console.log(err);
+                        // callback(err, null);
+                    },
+                    function (res) {
+                        // 上传成功
+                        console.log('上传成功');
+                        //callback(null, {name: file.name, path: result.path});
+                    });
+        }
+    </script>
+</head>
+<body>
+<div>
+    <input type="file" onchange="test1(this)"/>
+</div>
+</body>
+</html>

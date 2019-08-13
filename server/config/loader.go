@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"fmt"
 	"strings"
-	"gopkg.in/yaml.v3"
+	"gopkg.in/yaml.v2"
 )
 
 /*
