@@ -2,11 +2,11 @@ package config
 
 import (
 	"bytes"
-	"os"
-	"io/ioutil"
 	"fmt"
-	"strings"
 	"gopkg.in/yaml.v2"
+	"io/ioutil"
+	"os"
+	"strings"
 )
 
 /*

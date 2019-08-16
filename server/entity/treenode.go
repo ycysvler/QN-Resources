@@ -1,13 +1,13 @@
 package entity
 
 import (
-	"time"
-	"os"
 	"bytes"
 	"encoding/gob"
 	"fmt"
 	"io/ioutil"
+	"os"
 	"strconv"
+	"time"
 )
 
 type TreeNode struct {

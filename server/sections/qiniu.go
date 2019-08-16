@@ -7,12 +7,12 @@ type qiniu struct {
 	SecretKey string `yaml:"SecretKey,omitempty"`
 }
 
-func (s *qiniu) SectionName() string{
+func (s *qiniu) SectionName() string {
 	return "qiniu"
 }
 
 var Qiniu = &qiniu{}
 
-func init(){
+func init() {
 	config.Load(Qiniu)
 }

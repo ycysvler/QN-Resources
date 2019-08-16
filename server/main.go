@@ -2,15 +2,17 @@ package main
 
 import (
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"github.com/QN-Resources/server/entity"
 	"github.com/QN-Resources/server/sections"
+	"github.com/QN-Resources/server/server"
+	"github.com/gin-gonic/gin"
 	"github.com/qiniu/api.v7/auth/qbox"
 	"github.com/qiniu/api.v7/storage"
 )
 
-
-func main(){
+func main() {
+	server.Run()
+	return
 
 	fmt.Printf("qiniu:%v\n", sections.Qiniu)
 
@@ -29,7 +31,7 @@ func main(){
 
 	root.AddTreeNode("name", "path", 0)
 
-	fmt.Printf("root:%v\n",root)
+	fmt.Printf("root:%v\n", root)
 
 	// 设置 gin 的模式（调试模式：DebugMode, 发行模式：ReleaseMode）
 	gin.SetMode(gin.DebugMode)
@@ -46,10 +48,9 @@ func main(){
 		})
 	})
 
-	r.GET("/nodes", func(c *gin.Context){
+	r.GET("/nodes", func(c *gin.Context) {
 		c.JSON(200, root)
 	})
-
 
 	// 在8080 端口，启动http服务
 	r.Run(":8090")

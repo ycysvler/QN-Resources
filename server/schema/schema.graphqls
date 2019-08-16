@@ -1,0 +1,19 @@
+schema {
+    query: Query
+}
+# 查询操作
+type Query {
+    resourceQuery: ResourceQuery
+}
+
+type ResourceQuery{
+    hello: String!
+}
+
+# resource
+type Resource{
+    id: String!
+    name: String!
+    path: String!
+    type: Int!
+}
